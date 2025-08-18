@@ -1,7 +1,7 @@
 # LAB-23-Firewall-chain-Forward
 tanggal 16 Agustus 
 
-![m]()
+![m](YYYY.PNG)
 
 Dri gambar topologinya menunjukkan bahwa **PC dan Laptop hanya boleh mengakses situs [http://lms.rosctock.net](http://lms.rosctock.net)**. Semua akses lain ke internet akan diblokir menggunakan **chain forward** di Mikrotik.
 
