@@ -10,16 +10,16 @@ Dri gambar topologinya menunjukkan bahwa **PC dan Laptop hanya boleh mengakses s
 # Langkah Konfigurasi Firewall Chain Forward di Mikrotik
 1. Lakukan konfigurasi awal Mikrotik seperti membuat IP Static, DHCP Client, DHCP Server, dan NAT. Sampai Laptop terhubung dan bisa mengakses internet.
 
-2. Setting DHCP static lease agar IP tidak berubah.
+2. Setting DHCP static lease agar IP tidak berubah.    
 
     /ip dhcp-server lease add address=192.168.10.104 mac-address=00:90:F5:C7:5C:5C
 
-3. Tambahkan Address-List untuk situs yang diizinkan.
+3. Tambahkan Address-List untuk situs yang diizinkan.     
    IP > FIREWALL > ADDRESS-LIST.
 
 ![m](a2.PNG)
    
-4. Buat Rule untuk Mengizinkan Akses ke Situs Tersebut agar setiap trafik forward yang menuju ke alamat di daftar allow_site diizinkan.
+4. Buat Rule untuk Mengizinkan Akses ke Situs Tersebut agar setiap trafik forward yang menuju ke alamat di daftar allow_site diizinkan.      
    Firewall > Filter.
 
 ![m](a3.PNG)
