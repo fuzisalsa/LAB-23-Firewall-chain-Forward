@@ -34,6 +34,8 @@ Dri gambar topologinya menunjukkan bahwa **PC dan Laptop hanya boleh mengakses s
 * Saat client mengakses `lms.rosctock.net` → berhasil terbuka.
 * Saat client mencoba membuka situs lain → akses ditolak (request timeout).
 
+![m](a5.PNG)
+
 # Kesimpulan
 
 Dengan **chain forward**, kita dapat mengontrol lalu lintas yang melewati router.  
