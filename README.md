@@ -8,41 +8,19 @@ Dri gambar topologinya menunjukkan bahwa **PC dan Laptop hanya boleh mengakses s
 ---
 
 # Langkah Konfigurasi Firewall Chain Forward di Mikrotik
+1. Lakukan konfigurasi awal Mikrotik seperti membuat IP Static, DHCP Client, DHCP Server, dan NAT. Sampai Laptop terhubung dan bisa mengakses internet.
 
-1. Tambahkan Address List untuk Situs yang Diizinkan
+2. Setting DHCP static lease agar IP tidak berubah.
 
-Kita harus menambahkan alamat IP atau domain situs `lms.rosctock.net` ke **address-list**:
+    /ip dhcp-server lease add address=192.168.10.104 mac-address=00:90:F5:C7:5C:5C
 
-```bash
-/ip firewall address-list add list=allow-sites address=lms.rosctock.net
-```
+3. Tambahkan Address-List untuk situs yang diizinkan. di IP > FIREWALL > ADDRESS-LIST.
+   
+5. Buat Rule untuk Mengizinkan Akses ke Situs Tersebut agar setiap trafik forward yang menuju ke alamat di daftar allow_site diizinkan. di Firewall > Filter.
 
-*Jika domain tidak bisa langsung di-resolve, bisa ping dulu untuk tahu IP-nya lalu masukkan IP tersebut*
-
-![m]()
-
----
-
-2. Izinkan Akses ke Situs yang Diizinkan
-
-```bash
-/ip firewall filter add chain=forward dst-address-list=allow-sites action=accept comment="Allow access to lms.rosctock.net"
-```
-
----
-
-3. Blokir Semua Akses Internet Lain
-
-```bash
-/ip firewall filter add chain=forward action=drop comment="Block all other internet access"
-```
-
----
-catatan urutan Rule:  
-Pastikan rule **Allow** ditempatkan di atas rule **Block**, karena Mikrotik akan membaca aturan firewall dari atas ke bawah.
-
----
-
+ 
+7. Buat agar firewall blokir semua akses internet lain.   
+   
 **pengujian**
 
 * Saat client mengakses `lms.rosctock.net` → berhasil terbuka.
