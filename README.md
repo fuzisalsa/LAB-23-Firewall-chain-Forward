@@ -14,12 +14,20 @@ Dri gambar topologinya menunjukkan bahwa **PC dan Laptop hanya boleh mengakses s
 
     /ip dhcp-server lease add address=192.168.10.104 mac-address=00:90:F5:C7:5C:5C
 
-3. Tambahkan Address-List untuk situs yang diizinkan. di IP > FIREWALL > ADDRESS-LIST.
-   
-5. Buat Rule untuk Mengizinkan Akses ke Situs Tersebut agar setiap trafik forward yang menuju ke alamat di daftar allow_site diizinkan. di Firewall > Filter.
+3. Tambahkan Address-List untuk situs yang diizinkan.
+   IP > FIREWALL > ADDRESS-LIST.
 
+![m](a2.PNG)
+   
+4. Buat Rule untuk Mengizinkan Akses ke Situs Tersebut agar setiap trafik forward yang menuju ke alamat di daftar allow_site diizinkan.
+   Firewall > Filter.
+
+![m](a3.PNG)
  
-7. Buat agar firewall blokir semua akses internet lain.   
+5. Buat agar firewall blokir semua akses internet lain.
+
+![m](a24.PNG)
+
    
 **pengujian**
 
