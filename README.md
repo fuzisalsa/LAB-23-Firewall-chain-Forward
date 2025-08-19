@@ -26,7 +26,7 @@ Dri gambar topologinya menunjukkan bahwa **PC dan Laptop hanya boleh mengakses s
  
 5. Buat agar firewall blokir semua akses internet lain.
 
-![m](a24.PNG)
+![m](a4.PNG)
 
    
 **pengujian**
